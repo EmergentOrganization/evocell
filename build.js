@@ -4,56 +4,58 @@
 
 
 ({
-    baseUrl: "src",
-    name: "CellSpace",
+    baseUrl: "./src/",
+    name: "../src/CellSpace",
     out: "main-built.js",
 
     optimize: "none",
     wrapShim: 'true',
 
     paths: {
-		jquery: '../../res_evocell/src/libs/jquery-1.10.2',
-		"jquery-ui": '../../res_evocell/src/libs/jquery-ui-1.10.4.custom',
-		"underscore": "../../res_evocell/src/libs/underscore",
-		backbone: "../../res_evocell/src/libs/backbone",
-		knockback: "../../res_evocell/src/libs/knockback",
-		knockout: "../../res_evocell/src/libs/knockout-3.0.0",
-		meSpeak: "../../res_evocell/src/libs/mespeak/mespeak",
-		three: "../../res_evocell/src/libs/three", 
-		"jquery-cycle": "../../res_evocell/src/libs/jquery.cycle.all",
-		datgui: "../../res_evocell/src/libs/dat.gui.min",
-		FileSaver: "../../res_evocell/src/libs/FileSaver",
+        jquery: '../node_modules/jquery/dist/jquery',
+        "jquery-ui": '../node_modules/jquery-ui/jquery-ui',
+        "underscore": '../node_modules/underscore/underscore',
+		backbone: "../node_modules/backbone/index",
+		knockback: "../node_modules/knockback/knockback",
+		knockout: "../node_modules/knockout/build/output/knockout-latest",
+		meSpeak: "../node_modules/mespeak/mespeak",
+		three: "../node_modules/three.js/index",
+		datgui: "../node_modules/dat-gui/index",
+		FileSaver: "../node_modules/FileSaver/FileSaver",
+        "jquery-cycle": "./libs/jquery.cycle.all",
+        requireLib: 'libs/require'
 	},
 	shim: {
 		datgui: {
-			exports: "dat",
+			exports: "dat"
 		}, 
         "jquery-ui": {
             exports: "$",
-            deps: ['jquery', '../../res_evocell/src/libs/farbtastic']
+            deps: ['jquery']
         },
 		"jquery-cycle": {
 			deps: ["jquery-ui"]
 		},
 		underscore : {
-			exports: "_",
+			exports: "_"
 		},
 		backbone : {
 			exports: "Backbone",
-			deps: ['underscore'],
+			deps: ['underscore']
 		},
 		knockback: {
 			exports: "kb",
-			deps: ["backbone"],			
+			deps: ["backbone"]
 		},
 		knockout: {
-			exports: "ko",			
+			exports: "ko"
 		},
 		meSpeak: {
-			exports: "meSpeak",
+			exports: "meSpeak"
 		},
 		three: {
-			exports: "THREE",
-		},
-    }
+			exports: "THREE"
+		}
+    },
+    include: ["requireLib"]
 })

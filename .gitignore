@@ -1,7 +1,18 @@
+# libraries
+node_modules/
+
+# why is this here?
 rules/
+
+# in case this is where you are keeping it...
 r.js
+
+# webstorm ide stuff
 .idea/
+
+# sublime editor stuff
 cellspace.sublime-project
 cellspace.sublime-workspace
-*.js~
-*.html~
+
+# ignore ubuntu backups
+*~

@@ -1,0 +1,33 @@
+{
+    "name": "evocell",
+    "version": "0.0.2",
+    "description": "HTML5/WebGL engine to evolve & play around with ruletable based cellular automata",
+    "homepage": "https://github.com/EmergentOrganization/evocell",
+    "bugs": {
+        "url": "https://github.com/EmergentOrganization/evocell/issues"
+    },
+    "scripts": {
+        "build": "r.js -o ./build.js"
+    },
+    "contributors": [
+        "Wizard23",
+        "infiniteSearchSpace",
+        "7yl4r"
+    ],
+    "repository" : {
+        "type" : "git",
+        "url" : "https://github.com/EmergentOrganization/evocell.git"
+    },
+    "dependencies": {
+        "jquery": "~1.11.1",
+        "jquery-ui": "1.10.4",
+        "underscore": "1.7.0",
+        "backbone": "1.1.2",
+        "knockback": "0.20.4",
+        "knockout": "3.0.0",
+        "mespeak": "1.9.6",
+        "three.js": "0.1.0",
+        "dat-gui": "0.5",
+        "FileSaver": "~0.10.0"
+    }
+}
