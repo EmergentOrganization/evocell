@@ -27,6 +27,7 @@ function(GLOBALS, $, utils, EC, storyTeller,_ , Backbone, kb, ko, fileStore, THR
 
 		// SHIP ///////////////////////////////////////////
 		gameState.ship.step();
+		gameState.sector.step(gameState.ship);
 
 		reactor.step(gameState.rules.weaponExplosion, gameState.dishes.weaponExplosion);
 		reactor.step(gameState.rules.weapon, gameState.dishes.weapon);

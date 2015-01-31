@@ -1,5 +1,5 @@
-define(["backbone", "three", "datgui", "Utils", "CellSpace/PlayerShip", "GLOBALS", "EvoCell"],
-    function(Backbone, THREE, dat, utils, PlayerShip, GLOBALS, EC) {
+define(["backbone", "three", "datgui", "Utils", "CellSpace/PlayerShip", "CellSpace/Sector", "GLOBALS", "EvoCell"],
+    function(Backbone, THREE, dat, utils, PlayerShip, Sector, GLOBALS, EC) {
 	"use strict";
 
 	var gameState = {
@@ -90,8 +90,9 @@ define(["backbone", "three", "datgui", "Utils", "CellSpace/PlayerShip", "GLOBALS
 		showBuffer: false,
 		showRule: false,
 	};
-
     gameState.ship = new PlayerShip({screenX:GLOBALS.gameW/2, screenY:GLOBALS.gameH/2, reactor:gameState.reactor});
+    gameState.sector = new Sector({reactor: gameState.reactor});
+    gameState.sector.insertAt(Sector.SIZE/2, Sector.SIZE/2);  // start in middle of sector
     gameState.perfRequireTime = performance.now();
     gameState.perfStartedJSTime = window.perfStartedJSTime;
 
