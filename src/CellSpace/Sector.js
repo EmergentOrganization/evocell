@@ -48,6 +48,12 @@ define( ["GLOBALS"], function (GLOBALS){
         }
         args.drawn = false;
         this.buildings.push(args);
+        console.log('building added');
+    }
+
+    Sector.prototype.buildingViewable = function(buildingObj){
+        // TODO check if x,y of building inside viewArea
+        return true;
     }
 
     Sector.prototype.step = function(playerShip){
@@ -61,16 +67,20 @@ define( ["GLOBALS"], function (GLOBALS){
         this.viewX = playerShip.x + this.originX;
         this.viewY = playerShip.y + this.originY;
 
-        for (building in this.buildings){
+        var buildingsToDraw = [];
+        for ( var building in this.buildings){
             if(this.buildings[building].drawn){  // don't draw buildings already being shown
                 // TODO: update position on screen
             } else if(this.buildingViewable(this.buildings[building])){
                 // if building if viewable but isn't drawn yet
-                //TODO: draw building
+                buildingsToDraw.push(this.buildings[building]);
             } else {
                 // building is off-screen; ignore it
                 continue;
             }
+        }
+        if (buildingsToDraw.length > 0){
+            ;  // TODO: draw buildings...
         }
     }
 

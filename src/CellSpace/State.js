@@ -92,7 +92,12 @@ define(["backbone", "three", "datgui", "Utils", "CellSpace/PlayerShip", "CellSpa
 	};
     gameState.ship = new PlayerShip({screenX:GLOBALS.gameW/2, screenY:GLOBALS.gameH/2, reactor:gameState.reactor});
     gameState.sector = new Sector({reactor: gameState.reactor});
+
+    // add test building
+    gameState.sector.addBuilding({building:{}, x:0, y:0});
+
     gameState.sector.insertAt(Sector.SIZE/2, Sector.SIZE/2);  // start in middle of sector
+    
     gameState.perfRequireTime = performance.now();
     gameState.perfStartedJSTime = window.perfStartedJSTime;
 
