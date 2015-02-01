@@ -80,7 +80,18 @@ define( ["GLOBALS"], function (GLOBALS){
             }
         }
         if (buildingsToDraw.length > 0){
-            ;  // TODO: draw buildings...
+            // draws the building in the given gameState
+            // TODO: something like this...ish...
+		    //gameState.reactor.mixDish(
+		    //    gameState.shaders.drawCircle,
+		    //    gameState.dishes.ship,
+			//    {
+			//        center: [this.screenX, this.screenY],
+			//        radius: this.radius,
+			//        state: (gameState.rules.ship.nrStates-1)/255
+            //    }
+            //);
+            ;
         }
     }
 
